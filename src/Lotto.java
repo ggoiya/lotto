@@ -6,19 +6,20 @@ public class Lotto {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		printLotto();
+		new Lotto().getLotto();
 
 	}
 
-	public static void printLotto() {
+	public int[] getLotto() {
+		int[] numbers = new int[6];
 		for (int i = 0; i < 6; i++) {
-			System.out.println(getNumber());
+			numbers[i] = getNumber();
 		}
+		return numbers;
 	}
 
-	static Random random = new Random();
-
-	private static int getNumber() {
+	Random random = new Random();
+	private int getNumber() {
 		return random.nextInt(45) + 1;
 	}
 
